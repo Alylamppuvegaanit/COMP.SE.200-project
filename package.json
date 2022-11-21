@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1"
+    "test": "echo \"There're no tests yet... \" && exit 1"
   },
   "author": "",
   "license": "MIT",
