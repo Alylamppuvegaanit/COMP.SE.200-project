@@ -1,4 +1,6 @@
 # COMP.SE.200-project
+[![Coverage Status](https://coveralls.io/repos/github/Alylamppuvegaanit/COMP.SE.200-project/badge.svg?branch=main)](https://coveralls.io/github/Alylamppuvegaanit/COMP.SE.200-project?branch=main)
+
 Software testing project
 
 Library source codes for students participating in Software Testing course at Tampere University.
