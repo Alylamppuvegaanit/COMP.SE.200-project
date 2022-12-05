@@ -5,13 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha.js test/*.test.js"
+    "test": "./node_modules/nyc/bin/nyc.js --reporter=text ./node_modules/mocha/bin/mocha.js",
+    "test-coverage": "./node_modules/nyc/bin/nyc.js --reporter=lcov ./node_modules/mocha/bin/mocha.js",
+    "coverage": ""
   },
   "author": "Lotta Lindell, Sami Jakonen",
   "license": "MIT",
   "dependencies": {
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",
-    "mocha": "^10.1.0"
+    "mocha": "^10.1.0",
+    "nyc": "^15.1.0"
   }
 }
