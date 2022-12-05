@@ -5,26 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "./node_modules/nyc/bin/nyc.js --reporter=text ./node_modules/mocha/bin/mocha.js",
-    "test-coverage": "./node_modules/nyc/bin/nyc.js --reporter=lcov ./node_modules/mocha/bin/mocha.js"
+    "test": "mocha || exit 0",
+    "test-coverage": "c8 --check-coverage --reporter=lcov --reporter=text --exclude 'src/.internal/*' --exclude 'test/*' npm test"
   },
   "author": "Lotta Lindell, Sami Jakonen",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
+    "c8": "^7.12.0",
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",
     "mocha": "^10.1.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^15.1.0"
-  },
-  "nyc": {
-    "all": true,
-    "check-coverage": false,
-    "include": [
-      "src/*.js"
-    ],
-    "exclude": [
-      "src/.internal/*"
-    ]
+    "mocha-lcov-reporter": "^1.3.0"
   }
 }
