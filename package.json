@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha || exit 0",
+    "test": "mocha",
     "test-coverage": "c8 --check-coverage --reporter=lcov --reporter=text --exclude 'src/.internal/*' --exclude 'test/*' npm test"
   },
   "author": "Lotta Lindell, Sami Jakonen",
