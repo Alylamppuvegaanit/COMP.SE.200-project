@@ -40,4 +40,18 @@ describe('#isEmpty()', function() {
             expect(isEmpty(testSet)).to.equal(false);
         });
     });
+    context('given a set of null values', function() {
+        it('should return false', function() {
+            const testSet = new Set([null, null]);
+            expect(isEmpty(testSet)).to.equal(false);
+        });
+    });
+    context('given an empty function', function() {
+        it('should return true', function() {
+            function testFunc() {
+                return
+            }
+            expect(isEmpty(testFunc())).to.equal(true);
+        });
+    });
 });

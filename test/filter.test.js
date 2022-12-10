@@ -16,7 +16,7 @@ describe('#filter()', function() {
                 { 'user': 'fred',   'active': false }
             ];
             const expectedResult = [{ 'user': 'barney', 'active': true }];
-            expect(filter(users, ({ active }) => active)).to.equal(expectedResult);
+            expect(filter(users, ({ active }) => active)).to.deep.equal(expectedResult);
         });
         it('should return an array', function() {
             const users = [
@@ -28,7 +28,7 @@ describe('#filter()', function() {
     });
     context('given a null instead of an array', function() {
         it('should return an empty nested array', function() {
-            expect(filter(null, ({ active }) => active)).to.equal([[]]);
+            expect(filter(null, ({ active }) => active)).to.deep.equal([[]]);
         });
     });
 });

@@ -34,4 +34,9 @@ describe('#ceil()', function() {
             expect(ceil(-5.565)).to.equal(-5);
         });
     });
+    context('given a long decimal and a precision', function() {
+        it('should return the rounded number', function() {
+            expect(ceil(1.849838154, 2)).to.equal(1.85);
+        });
+    });
 });

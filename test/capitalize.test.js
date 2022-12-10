@@ -19,4 +19,14 @@ describe('#capitalize()', function() {
             expect(capitalize('fred')).to.equal('Fred');
         });
     });
+    context('given a string with special characters', function() {
+        it('should return the capitalized string with special characters', function() {
+            expect(capitalize('th1S !s @ Str1ng')).to.equal('Th1s !s @ str1ng');
+        });
+    });
+    context('given undefined', function() {
+        it('should throw exception on wrong type', function() {
+            expect(capitalize(undefined)).to.throw();
+        });
+    });
 });
