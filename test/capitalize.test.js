@@ -10,23 +10,31 @@ const expect = chai.expect;
 
 describe('#capitalize()', function() {
     context('given an uppercase word', function() {
+        it('should return a string', function() {
+            expect(capitalize('VEGAN PIZZA')).to.be.a('string');
+        });
         it('should return capitalized word', function() {
-            expect(capitalize('FRED')).to.equal('Fred');
+            expect(capitalize('VEGAN PIZZA')).to.equal('Vegan pizza');
         });
     });
     context('given an lowercase word', function() {
         it('should return capitalized word', function() {
-            expect(capitalize('fred')).to.equal('Fred');
+            expect(capitalize('vegan pizza')).to.equal('Vegan pizza');
         });
     });
     context('given a string with special characters', function() {
         it('should return the capitalized string with special characters', function() {
-            expect(capitalize('th1S !s @ Str1ng')).to.equal('Th1s !s @ str1ng');
+            expect(capitalize('wing sauce 1kg/35oz')).to.equal('Wing sauce 1kg/35oz');
         });
     });
-    context('given undefined', function() {
-        it('should throw exception on wrong type', function() {
-            expect(capitalize(undefined)).to.throw();
+    context('given an empty string', function() {
+        it('should return an empty string', function() {
+            expect(capitalize('')).to.equal('');
+        });
+    });
+    context('given a numeric string input', function() {
+        it('should return the number stringified', function() {
+            expect(capitalize('101')).to.equal('101');
         });
     });
 });

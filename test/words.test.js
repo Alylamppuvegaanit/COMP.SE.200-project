@@ -11,17 +11,17 @@ const expect = chai.expect;
 describe('#words()', function() {
     context('given string composed of alphanumeric characters and special characters', function() {
         it('should return an array of the words with only alphanumeric characters', function() {
-            expect(words('fred, barney, & pebbles')).to.deep.equal(['fred', 'barney', 'pebbles']);
+            expect(words('vesi vehnäjauho hiiva')).to.deep.equal(['vesi', 'vehnäjauho', 'hiiva']);
         });
     });
     context('given string composed of alphanumeric characters and special characters and a pattern for matching', function() {
         it('should return array of words that match the pattern', function() {
-            expect(words('fred, barney, & pebbles', /[^, ]+/g)).to.deep.equal(['fred', 'barney', '&', 'pebbles']);
+            expect(words('vesi, vehnäjauho, hiiva', /[^, ]+/g)).to.deep.equal(['vesi', 'vehnäjauho', 'hiiva']);
         });
     });
     context('given a string as pattern', function() {
         it('should return array of words that match the pattern', function() {
-            expect(words('fred, barney, & pebbles', 'abc')).to.deep.equal([]);
+            expect(words('pähkinä, manteli, siirappi', 'pähkinä')).to.deep.equal(['pähkinä']);
         });
     });
 });

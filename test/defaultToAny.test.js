@@ -21,7 +21,12 @@ describe('#defaultToAny()', function() {
     });
     context('given multiple invalid values', function() {
         it('should return the last', function() {
-            expect(defaultToAny(undefined, null, NaN)).to.equal(NaN);
+            expect(defaultToAny(undefined, null, NaN)).to.deep.equal(NaN);
+        });
+    });
+    context('given multiple falsy values with the first value being valid', function() {
+        it('should return the first one', function() {
+            expect(defaultToAny('Texas Pete', null, undefined)).to.equal('Texas Pete');
         });
     });
 });

@@ -16,7 +16,7 @@ describe('#isEmpty()', function() {
     });
     context('given an unempty object', function() {
         it('should return false', function() {
-            expect(isEmpty({"amount": {"apple" : 2}})).to.equal(false);
+            expect(isEmpty({'amount': {'Kana-caesarsalaatti' : 2}})).to.equal(false);
         });
     });
     context('given an unempty array', function() {
@@ -34,22 +34,10 @@ describe('#isEmpty()', function() {
             expect(isEmpty(null)).to.equal(true);
         });
     });
-    context('given an unempty set', function() {
-        it('should return false', function() {
-            const testSet = new Set(["a","b","c"]);
-            expect(isEmpty(testSet)).to.equal(false);
-        });
-    });
-    context('given a set of null values', function() {
-        it('should return false', function() {
-            const testSet = new Set([null, null]);
-            expect(isEmpty(testSet)).to.equal(false);
-        });
-    });
     context('given an empty function', function() {
         it('should return true', function() {
             function testFunc() {
-                return
+                return;
             }
             expect(isEmpty(testFunc())).to.equal(true);
         });
